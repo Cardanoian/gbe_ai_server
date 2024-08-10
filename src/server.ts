@@ -9,7 +9,9 @@ import cors from 'cors';
 
 dotenv.config();
 
-const API_KEY: string | undefined = process.env.APIKEY;
+let API_KEY: string | undefined = process.env.API_KEY;
+
+console.log(`API_KEY: ${API_KEY}`);
 
 db.sync().then(() => {
 	console.log('connect to DB');
