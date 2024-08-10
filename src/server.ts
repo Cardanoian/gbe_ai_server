@@ -24,9 +24,19 @@ const port: number = 18888;
 app.use(express.json());
 app.use(cors());
 
+app.get('/maker-data', (req: Request, res: Response) => {
+	return res.send({
+		city: 'pohang',
+		school: 'wondong',
+		email: 'orckang@gmail.com',
+		firstName: 'jiwon',
+		lastName: 'kim',
+	});
+});
+
 app.get('/pohang/jiwon/kim', (req: Request, res: Response) => {
 	console.log('got a request');
-	return res.send(API_KEY);
+	return res.send(`${API_KEY}`);
 });
 
 app.post(
